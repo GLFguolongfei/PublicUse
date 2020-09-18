@@ -11,8 +11,7 @@ pipeline {
 //                 sh 'npm run start'
                 // 部署方式2
                 sh 'npm run build'
-                sh 'cd ./build'
-                sh 'live-server' // 成功,会自动打开浏览器页面
+                sh 'cd ./build && live-server' // 成功,会自动打开浏览器页面
             }
         }
     }
