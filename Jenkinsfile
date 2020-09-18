@@ -4,10 +4,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm --version' // sh命令是shell命令语言解释器,其引号间的文字会当成shell直接执行
+                // sh命令是shell命令语言解释器,其引号间的文字会当成shell直接执行
+                sh 'npm --version'
                 sh 'echo "Hello World"'
-                sh 'npm run start'
-//                 sh 'live-server' // 成功
+                // 部署方式1
+//                 sh 'npm run start'
+                // 部署方式2
+                sh 'npm run build'
+                sh 'cd ./build'
+                sh 'live-server' // 成功,会自动打开浏览器页面
             }
         }
     }
