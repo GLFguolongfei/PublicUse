@@ -6,8 +6,8 @@ pipeline {
             steps {
                 sh 'npm --version' // sh命令是shell命令语言解释器,其引号间的文字会当成shell直接执行
                 sh 'echo "Hello World"'
-//                 sh 'npm run start'
-                sh 'live-server'
+                sh 'npm run start'
+//                 sh 'live-server' // 成功
             }
         }
     }
