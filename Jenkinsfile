@@ -7,11 +7,11 @@ pipeline {
                 // sh命令是shell命令语言解释器,其引号间的文字会当成shell直接执行
                 sh 'npm --version'
                 sh 'echo "Hello World"'
-                // 部署方式1
-//                 sh 'npm run start'
-                // 部署方式2
-                sh 'npm run build'
-                sh 'cd ./build && live-server' // 成功,会自动打开浏览器页面
+                // 部署方式1: Jenkins运行成功,但访问不了
+                sh 'npm run start'
+                // 部署方式2: Jenkins运行成功,会自动打开浏览器页面
+//                 sh 'npm run build'
+//                 sh 'cd ./build && live-server'
             }
         }
     }
@@ -29,8 +29,7 @@ pipeline {
             echo 'GuoLongFei: This will run only if the run was marked as unstable'
         }
         changed {
-            echo 'GuoLongFei: This will run only if the state of the Pipeline has changed'
-            echo 'GuoLongFei: For example, if the Pipeline was previously failing but is now successful'
+            echo 'GuoLongFei: This will run only if the state of the Pipeline has changed. For example, if the Pipeline was previously failing but is now successful'
         }
     }
 }
