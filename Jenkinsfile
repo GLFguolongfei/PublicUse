@@ -25,6 +25,13 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('Deploy2') {
+            steps {
+                echo 'Deploying2'
+            }
+        }
+    }
     post {
         always {
             echo 'GuoLongFei: This will always run'
